@@ -9,3 +9,14 @@ You use this configuration for many project, works on all OS and it's so fast!
 You might need to change the permission of the web folder. You have to deploy your code into /var/www/dev.
 
 You tend to use one VM per project ;)
+
+have a look to nginx configuration. It's still not optimal and useable after first vagrant up. Need to fix something.
+
+
+
+MYSQL
+======
+
+[mysqld]
+bind-address = 0.0.0.0
+#skip-external-locking

@@ -24,6 +24,10 @@ vagrantfile:
                         hostname: invoice.vm
                         network:
                             private_network: 192.168.56.104
+                            forwarded_port:
+                                mysql:
+                                    host: '3306'
+                                    guest: '3306'
                         memory: '1024'
                         cpus: '2'
         provision:
@@ -106,7 +110,7 @@ nginx:
                 - index.php
                 - app_dev.php
                 - app.php
-            client_max_body_size: 1m
+            client_max_body_size: 5m
             ssl: '0'
             ssl_cert: ''
             ssl_key: ''
@@ -121,7 +125,7 @@ nginx:
                     try_files:
                         - $uri
                         - $uri/
-                        - '/app_dev.php?is_args$args'
+                        - '/app_dev.php$is_args$args'
                     fastcgi: ''
                     fastcgi_index: app.php
                     fastcgi_split_path: ''
@@ -318,7 +322,7 @@ mysql:
     adminer: '1'
     users:
         mysqlnu_jt4c8xl8xn7v:
-            name: spartan
+            name: symfony
             password: '123'
     databases: {  }
     grants: {  }
