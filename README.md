@@ -20,3 +20,5 @@ MYSQL
 [mysqld]
 bind-address = 0.0.0.0
 #skip-external-locking
+#skip-external-locking 
+#bind-address
